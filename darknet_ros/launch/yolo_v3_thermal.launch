@@ -4,13 +4,14 @@
   
   <!-- Use YOLOv3 -->
   <arg name="network_param_file"         default="$(find darknet_ros)/config/yolov3.yaml"/>
-  <arg name="image" default="camera/rgb/image_raw" />
-
+  <arg name="image" default="seek_camera/displayImage" />
+  <arg name="node_name" value="darknet_ros_thermal" />
 
   <!-- Include main launch file -->
   <include file="$(find darknet_ros)/launch/darknet_ros.launch">
     <arg name="network_param_file"    value="$(arg network_param_file)"/>
     <arg name="image" value="$(arg image)" />
+    <arg name="node_name" value="$(arg node_name)" />
   </include>
 
 </launch>
